@@ -22,8 +22,6 @@ class MyFirstAgent(IAgent):
         # uncomment this to draw the graph of the current level to the screen:
         # DebugHelper.drawMap(obs)
 
-        # sleep(0.01)
-
         pacmanPosition = obs.getPacmanPosition()
         pacmanTarget = obs.getPacmanTargetPosition()
 
