@@ -27,6 +27,7 @@ class MyFirstAgent(IAgent):
 
         # draw a purple line from pacman to pacman's target
         DebugHelper.drawLine(pacmanPosition, pacmanTarget, DebugHelper.PURPLE, 5)
+        
         # if pacman is on a node, move to a random direction
         if pacmanPosition == pacmanTarget:
             return random.choice([UP, DOWN, LEFT, RIGHT])
