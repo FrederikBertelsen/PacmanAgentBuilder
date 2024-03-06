@@ -1,3 +1,5 @@
+import os.path
+
 import pygame
 from pygame.locals import *
 
@@ -69,15 +71,15 @@ class GameController(object):
 
         self.mazedata.loadMaze(self.level)
         self.mazesprites = MazeSprites(
-            f"Pacman_complete/{self.mazedata.obj.name}.txt",
-            f"Pacman_complete/{self.mazedata.obj.name}_rotation.txt"
+            os.path.join("Pacman_complete", f"{self.mazedata.obj.name}.txt"),
+            os.path.join("Pacman_complete", f"{self.mazedata.obj.name}_rotation.txt")
         )
         self.setBackground()
-        self.nodes = NodeGroup(f"Pacman_complete/{self.mazedata.obj.name}.txt")
+        self.nodes = NodeGroup(os.path.join("Pacman_complete", f"{self.mazedata.obj.name}.txt"))
         self.mazedata.obj.setPortalPairs(self.nodes)
         self.mazedata.obj.connectHomeNodes(self.nodes)
         self.pacman = Pacman(self.nodes.getNodeFromTiles(*self.mazedata.obj.pacmanStart), agent)
-        self.pellets = PelletGroup(f"Pacman_complete/{self.mazedata.obj.name}.txt")
+        self.pellets = PelletGroup(os.path.join("Pacman_complete", f"{self.mazedata.obj.name}.txt"))
         self.ghosts = GhostGroup(self.nodes.getStartTempNode(), self.pacman)
 
         self.ghosts.pinky.setStartNode(self.nodes.getNodeFromTiles(*self.mazedata.obj.addOffset(2, 3)))
