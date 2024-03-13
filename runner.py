@@ -1,5 +1,10 @@
+import os
+
 from PacmanAgentBuilder.agents.MyFirstAgent import MyFirstAgent
 from PacmanAgentBuilder.utils.runnerFunctions import *
+
+# stops the PyGame hello message from showing
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
 
 if __name__ == "__main__":
