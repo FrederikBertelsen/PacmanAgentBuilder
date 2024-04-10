@@ -4,7 +4,7 @@ from Pacman_Complete.run import GameController
 
 
 def runGameWithAgent(agentClass: type[IAgent], gameSpeed=1, startLives=3, startLevel: int = 0,
-                     ghostsEnabled: bool = True, freightEnabled: bool = True, lockDeltaTime: bool = False) -> GameStats:
+                     ghostsEnabled: bool = True, freightEnabled: bool = True, lockDeltaTime: bool = False, disableVisuals=False) -> GameStats:
     """
         Runs a single game with the specified agent.
 
@@ -27,7 +27,8 @@ def runGameWithAgent(agentClass: type[IAgent], gameSpeed=1, startLives=3, startL
         startLevel=startLevel,
         ghostsEnabled=ghostsEnabled,
         freightEnabled=freightEnabled,
-        lockDeltaTime=lockDeltaTime
+        lockDeltaTime=lockDeltaTime,
+        disableVisuals=disableVisuals
     )
     agent = agentClass(gameController=game)
 
@@ -40,7 +41,7 @@ def runGameWithAgent(agentClass: type[IAgent], gameSpeed=1, startLives=3, startL
 
 def calculatePerformanceOverXGames(agentClass: type[IAgent], gameCount: int = 100, gameSpeed=1,
                                    startLevel: int = 0, ghostsEnabled: bool = True, freightEnabled: bool = True,
-                                   lockDeltaTime=True, logging=False):
+                                   lockDeltaTime=True, logging=False, disableVisuals: bool = False):
     """
         Calculates the performance of the specified agent over a number of games.
 
@@ -65,7 +66,7 @@ def calculatePerformanceOverXGames(agentClass: type[IAgent], gameCount: int = 10
 
         gameStats.append(runGameWithAgent(agentClass, gameSpeed=gameSpeed, startLives=3, startLevel=startLevel,
                                           ghostsEnabled=ghostsEnabled, freightEnabled=freightEnabled,
-                                          lockDeltaTime=lockDeltaTime))
+                                          lockDeltaTime=lockDeltaTime, disableVisuals=disableVisuals))
 
         if logging:
             print(f"Game {i + 1} result: {gameStats[i]}")
