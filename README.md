@@ -37,6 +37,7 @@ You can adjust these variables in the `runner.py` file:
 
 The cornerstone of agent development, this class contains all the necessary information that the agent will need to play the game:
 
+- `getLegalMoves()`: Returns the legal moves of the current position of the game.
 - `getPacmanPosition()`: Returns Pac-Man's current position.
 - `getPacmanTarget()`: Returns the position of the node that Pac-Man is currently moving towards.
 - `getNodeList()`: Returns a list of all nodes in the current level.
