@@ -17,5 +17,5 @@ if __name__ == "__main__":
         freightEnabled=True,  # Toggle if the effect of power pellets should be ignored.
         lockDeltaTime=False,  # When enabled, the game will run at the highest possible speed.
         logging=True,  # Toggle the logging of game-related information to the console while the agent is playing.
-        disableVisuals=True  # Toggle to disable visuals, to improve performance
+        disableVisuals=False  # Toggle the game visuals. (can speed up the game, when `lockDeltaTime` is enabled.)
     )

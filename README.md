@@ -27,6 +27,7 @@ You can adjust these variables in the `runner.py` file:
 - `freightEnabled`: Toggle if the effect of power pellets should be ignored (ghosts turning blue and stops chasing).
 - `lockDeltaTime`: When enabled, the game will run at the highest possible speed regardless of the `gameSpeed` setting. This provides a stable test environment as the game speed is bottlenecked by your hardware, and can therefore not go faster than your hardware can handle.
 - `logging`: Toggle the logging of game-related information to the console while the agent is playing.
+- `disableVisuals`: Toggle the game visuals. (Disabling visuals can speed up the game, when `lockDeltaTime` is enabled.)
 
 > [!TIP]
 > If you want to make the game window larger or smaller, you can change the `WINDOWSIZE` constant (line 1) in the `Pacman_Complete/Constants.py` file.
