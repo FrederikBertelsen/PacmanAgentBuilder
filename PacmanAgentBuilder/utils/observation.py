@@ -19,24 +19,6 @@ class Observation(object):
         self.pacman = gameController.pacman
         self.nodeGroup = gameController.nodes
 
-    # ------------------ Pacman Functions ------------------
-
-    # Returns Pac-Man's current position.
-    def getPacmanPosition(self) -> Vector2:
-        """
-            :return: Pac-Man's current position.
-        """
-        if self.pacman.overshotTarget():
-            return self.getPacmanTargetPosition()
-
-        return Vector2(int(self.pacman.position.x), int(self.pacman.position.y))
-
-    def getPacmanTargetPosition(self) -> Vector2:
-        """
-            :return: Returns the Node that Pac-Man is currently moving towards.
-        """
-        return self.pacman.target.position
-
     def getLegalMoves(self) -> list[int]:
         """
             :return: Returns the legal moves from pacman's current position
@@ -58,6 +40,25 @@ class Observation(object):
             legalMoves.append(UP)
             legalMoves.append(DOWN)
         return legalMoves
+
+    
+    # ------------------ Pacman Functions ------------------
+
+    # Returns Pac-Man's current position.
+    def getPacmanPosition(self) -> Vector2:
+        """
+            :return: Pac-Man's current position.
+        """
+        if self.pacman.overshotTarget():
+            return self.getPacmanTargetPosition()
+
+        return Vector2(int(self.pacman.position.x), int(self.pacman.position.y))
+
+    def getPacmanTargetPosition(self) -> Vector2:
+        """
+            :return: Returns the Node that Pac-Man is currently moving towards.
+        """
+        return self.pacman.target.position
 
     # ------------------ Node Functions ------------------
     def getNodeList(self) -> list[Node]:
