@@ -31,6 +31,7 @@ You can adjust these variables in the `runner.py` file:
 
 > [!TIP]
 > If you want to make the game window larger or smaller, you can change the `WINDOWSIZE` constant (line 1) in the `Pacman_Complete/Constants.py` file.
+> (This also changes the distance between nodes in the game)
 
 ## Classes and Utilities
 
